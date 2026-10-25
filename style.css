@@ -363,6 +363,26 @@ a:hover {
   opacity: 0.88;
 }
 
+/* ---------- Social buttons ---------- */
+.btn-social .icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex-shrink: 0;
+}
+
+.socials-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--faint) !important;
+  margin: 2rem 0 0.75rem !important;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
 /* ---------- Chips ---------- */
 .chips {
   list-style: none;
@@ -578,12 +598,33 @@ a:hover {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 640px) {
+  /* The section links drop to their own row so none of them are cut off. */
+  html {
+    scroll-padding-top: 7rem;
+  }
+
   .topbar-inner {
-    padding: 0.65rem 1rem;
+    padding: 0.6rem 1rem 0.5rem;
+    flex-wrap: wrap;
+    row-gap: 0.35rem;
+  }
+
+  .theme-toggle {
+    margin-left: auto;
   }
 
   .nav {
-    gap: 1rem;
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+    overflow: visible;
+  }
+
+  .nav a {
+    font-size: 0.78rem;
   }
 
   .page {
@@ -600,10 +641,6 @@ a:hover {
 }
 
 @media (max-width: 420px) {
-  .brand {
-    display: none;
-  }
-
   .id-card-body {
     flex-direction: column;
   }
